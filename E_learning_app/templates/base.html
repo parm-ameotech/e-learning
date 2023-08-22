@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <title>E-Learning</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <!-- Icons -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid" id="wrapper">
+        <div class="row">
+            <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
+                <h1 class="site-title"><a href="{% url 'dashboard' %}"><em class="fa fa-book"></em> E-Learning</a></h1>
+
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+                <ul class="nav nav-pills flex-column sidebar-nav">
+                    <li class="nav-item"><a class="nav-link {% block dashboardActive %}{% endblock dashboardActive %}"
+                            href="{% url 'dashboard' %}"><em class="fa fa-dashboard"></em> Dashboard <span
+                                class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link {% block profileActive %}{% endblock profileActive %}"
+                            href="{% url 'profile' %}"><em class="fa fa-calendar-o"></em> Profile</a></li>
+                    <li class="nav-item"><a class="nav-link {% block courseActive %}{% endblock courseActive %}" href="{% url 'course' %}"><em class="fa fa-clone"></em>
+                            Course</a></li>
+                            <li class="nav-item"><a class="nav-link {% block registerActive %}{% endblock registerActive %}" href="{% url 'register' %}"><em class="fa fa-user"></em>
+                                Register</a></li>
+                                <li class="nav-item"><a class="nav-link {% block loginActive %}{% endblock loginActive %}" href="{% url 'login' %}"><em class="fa fa-user"></em>
+                                    Login</a></li>
+                </ul>
+                <a href="{% url 'logout' %}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
+            </nav>
+            {% block content %}
+            {% endblock %}
+
+            <!-- Bootstrap core JavaScript
+	================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                crossorigin="anonymous"></script>
+            <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+
+            <script src="{% static 'js/chart.min.js' %}"></script>
+            <script src="{% static 'js/chart-data.js' %}"></script>
+            <script src="{% static 'js/easypiechart.js' %}"></script>
+            <script src="{% static 'js/easypiechart-data.js' %}"></script>
+            <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+            <script src="{% static 'js/custom.js' %}"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+                integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
