@@ -27,113 +27,89 @@
 			{% endif %}
 			<div class="clear"></div>
 		</header>
-		
-		<section class="row">
-			
-			<div class="col-sm-12">
-				<!-- <section class="row">
-					{% for course in courses %}
-					<div class="col-lg-4 mb-4">
-						<div class="card text-white bg-primary">
-							<div class="card-header">{{course.title}}</div>
-							<div class="card-block">
-								<p>{{course.description}} <span id="more" style="">{{course.description}}</span></p> -->
-				<!-- <p>{{course.description}}<span id="dots">...</span><span id="more" style="display: none">{{course.description}}</span></p> -->
 
-				<!-- </div>
-						</div>
-					</div>
-					 -->
-				<!-- {% endfor %} -->
-				<!-- </section> -->
-				
+		<section class="row">
+
+			<div class="col-sm-12">
 				<div class="courses-card-wrapper ">
-				
+
 					<div class="row">
 						{% for i in courses %}
-					<div class="col-lg-4">
-						
-						<div class="card-item">
-						<div class="card-wrapper">
-								<div class="content">
-									<img src="/media/profile_pictures/card-two.jpeg">
-								</div>
-								<div class="card-item-info">
-									<h6>communication</h6>
-									<h5>{{i.title}}</h5>
-									<div class="info-meta">
-										<div class="card-item-meta-block">
-											<i class="fa fa-user-o" aria-hidden="true"></i>
-											<span>2019</span>
-										</div>
-										<div class="card-item-meta-block">
-											<i class="fa fa-eye" aria-hidden="true"></i>
-											<span>3565</span>
-										</div>
+						<div class="col-lg-4">
+
+							<div class="card-item">
+								<div class="card-wrapper">
+									<div class="content">
+										<img src="{% static 'images/card-two.jpg' %}">
 									</div>
-									<div class="info-meta-divider"></div>
-									<span></span>
-									<div></div>
-								</div>
-							</div>
-							<div class="card-item-popup ml-2">
-								<div class="author">
-									<img src="/media/profile_pictures/demo-instructor.jpg">
-									<span>Demo instructor</span>
-								</div>
-								<h3 class="item-popup-title">{{i.title}}</h3>
-								<div class="card-item-expert">
-	
-									{{i.description}}
-									<div class="card-item-popup-meta">
-										<div class="card-meta-block">
-											<i class="fa fa-signal" aria-hidden="true"></i>
-											<span>{{i.leval}}</span>
+									<div class="card-item-info">
+										<h6>communication</h6>
+										<h5>{{i.title}}</h5>
+										<div class="info-meta">
+											<div class="card-item-meta-block">
+												<i class="fa fa-user-o" aria-hidden="true"></i>
+												<span>2019</span>
+											</div>
+											<div class="card-item-meta-block">
+												<i class="fa fa-eye" aria-hidden="true"></i>
+												<span>3565</span>
+											</div>
 										</div>
-										<div class="card-meta-block">
-											<i class="fa fa-bars" aria-hidden="true"></i>
-											<span>16 lectures</span>
-										</div>
-										<div class="card-meta-block">
-											<i class="fa fa-clock-o" aria-hidden="true"></i>
-											<span> 2 hours</span>
-										</div>
+										<div class="info-meta-divider"></div>
+										<span></span>
+										<div></div>
 									</div>
-									<div class="card-item-popup-button-wrapper">
-										Preview this course
+								</div>
+								<div class="card-item-popup ml-2">
+									<div class="author">
+										<img src="{% static 'images/demo-instructor.jpg' %}">
+										<span>Demo instructor</span>
 									</div>
-									<div class="card-bottom-wrapper">
-										<div class="card-popup-wishlist">
-											<a>
-												<i class="fa fa-heart-o" aria-hidden="true"></i>
-												<span>Add to wishlist</span>
-											</a>
+									<h3 class="item-popup-title">{{i.title}}</h3>
+									<div class="card-item-expert">
+
+										{{i.description}}
+										<div class="card-item-popup-meta">
+											<div class="card-meta-block">
+												<i class="fa fa-signal" aria-hidden="true"></i>
+												<span>{{i.leval}}</span>
+											</div>
+											<div class="card-meta-block">
+												<i class="fa fa-bars" aria-hidden="true"></i>
+												<span>16 lectures</span>
+											</div>
+											<div class="card-meta-block">
+												<i class="fa fa-clock-o" aria-hidden="true"></i>
+												<span> 2 hours</span>
+											</div>
 										</div>
-										<div class="popup-price">
-											<div class="price-single">
-												<span>free</span>
+										<div class="card-item-popup-button-wrapper">
+											Preview this course
+										</div>
+										<div class="card-bottom-wrapper">
+											<div class="card-popup-wishlist">
+												<a>
+													<i class="fa fa-heart-o" aria-hidden="true"></i>
+													<span>Add to wishlist</span>
+												</a>
+											</div>
+											<div class="popup-price">
+												<div class="price-single">
+													<span>free</span>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
+						</div>
+						{% endfor %}
 					</div>
-					   {% endfor %}
-						
-					</div>
-					
-					
+
 				</div>
-				    
-				
 			</div>
 		</section>
 	</main>
-	</div>
-	</div>
-
-
 </body>
 {% endblock %}
