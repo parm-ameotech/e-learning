@@ -46,3 +46,16 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+class Course(models.Model):
+    LEVEL_TYPES = (
+        ('beginner', 'Beginner'),
+        ('intermediate', 'Intermediate'),
+        ('advanced', 'Advanced'),
+    )
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    leval = models.CharField(max_length=20, choices=LEVEL_TYPES, default='beginner')
+
+    def __str__(self):
+        return self.title

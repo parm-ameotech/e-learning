@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as a_login
 from django.contrib.auth import logout as a_logout
+from .models import Course
 
 def dashboard(request):
     return render(request,'index.html')
@@ -62,3 +63,7 @@ def logout(request):
     a_logout(request)
     messages.success(request, 'Logout successful.')
     return redirect('login')  # Redirect to the home page after logout
+
+def course(request):
+    courses = Course.objects.all()
+    return render(request, 'course.html', {'courses': courses})
