@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as a_login
 from django.contrib.auth import logout as a_logout
 from .models import Course
+from .forms import CourseForm
 
 def dashboard(request):
     return render(request,'index.html')
@@ -67,3 +68,15 @@ def logout(request):
 def course(request):
     courses = Course.objects.all()
     return render(request, 'course.html', {'courses': courses})
+
+def add_course(request):
+    if request.method == 'POST':
+        form = CourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            course = form.save(commit=False)
+            course.teacher = request.user
+            course.save()
+            return redirect('course')
+    else:
+        form = CourseForm()
+    return render(request, 'add_course.html', {'form': form})

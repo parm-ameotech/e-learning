@@ -62,8 +62,8 @@
 								</div>
 								<div class="card-item-popup ml-2">
 									<div class="author">
-										<img src="{% static 'images/demo-instructor.jpg' %}">
-										<span>Demo instructor</span>
+										<img src="{{i.teacher.profile_picture.url}}">
+										<span>{{i.teacher.first_name}}</span>
 									</div>
 									<h3 class="item-popup-title">{{i.title}}</h3>
 									<div class="card-item-expert">
@@ -76,11 +76,11 @@
 											</div>
 											<div class="card-meta-block">
 												<i class="fa fa-bars" aria-hidden="true"></i>
-												<span>16 lectures</span>
+												<span>{{i.lectures}}</span>
 											</div>
 											<div class="card-meta-block">
 												<i class="fa fa-clock-o" aria-hidden="true"></i>
-												<span> 2 hours</span>
+												<span>{{i.durations}}</span>
 											</div>
 										</div>
 										<div class="card-item-popup-button-wrapper">
@@ -95,7 +95,7 @@
 											</div>
 											<div class="popup-price">
 												<div class="price-single">
-													<span>free</span>
+													<span>₹ {{i.price}}</span>
 												</div>
 											</div>
 										</div>

@@ -32,7 +32,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    profile_picture = models.ImageField(default="default.jpg" ,upload_to='profile_pictures/')
+    profile_picture = models.ImageField(default="default.jpg" ,upload_to='profile_pictures/',blank=True)
     mobile_number = models.CharField(max_length=15, blank=True, null=True)
     user_type = models.CharField(max_length=10, choices=USER_TYPES, default='student')
 
@@ -56,6 +56,14 @@ class Course(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     leval = models.CharField(max_length=20, choices=LEVEL_TYPES, default='beginner')
+    cover_image = models.ImageField(default="cover_default.jpg" ,upload_to='cover_pictures/',blank=True)
+    lectures = models.IntegerField(default='0')
+    durations = models.CharField(max_length=10,default='0')
+    course_video =models.FileField(upload_to='course_video',null=True,blank=True)
+    course_docx = models.FileField(upload_to='course',null=True,blank=True)
+    teacher = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='courses_taught',null = True)
+    price = models.CharField(max_length=10,default='0')
+
 
     def __str__(self):
         return self.title

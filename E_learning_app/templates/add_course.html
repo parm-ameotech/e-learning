@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% block addCourse %}active{% endblock addCourse %}
+{% load static %}
+
+
+<body>
+    <main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
+
+        <div class="container mt-5">
+            <h2>Add Course</h2>
+
+            <form method="post" enctype="multipart/form-data" class="form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Add Course</button>
+            </form>
+
+        </div>
+
+</main>
+</body>
+{% endblock %}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load user_type_tags %}
 
 <head>
     <meta charset="utf-8">
@@ -44,6 +45,12 @@
                     <a href="{% url 'logout' %}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
                     <li class="nav-item"><a class="nav-link {% block profileActive %}{% endblock profileActive %}"
                         href="{% url 'profile' %}"><em class="fa fa-calendar-o"></em> Profile</a></li>
+
+                    {% if request.user|is_teacher %}
+                    <li class="nav-item"><a class="nav-link {% block addCourse %}{% endblock addCourse %}"
+                        href="{% url 'add_course' %}"><em class="fa fa-plus"></em>
+                        add course</a></li>
+                    {% endif %}
                     {% else %}
 
                     <li class="nav-item"><a class="nav-link {% block registerActive %}{% endblock registerActive %}"
