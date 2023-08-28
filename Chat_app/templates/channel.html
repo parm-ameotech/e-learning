@@ -14,7 +14,7 @@
 						{% for message in messages %}
 						<div
 							class="message {% if message.username == user.get_full_name %}user-message{% else %}other-message{% endif %}">
-							<p><b>{{ message.username }}:</b> {{ message.message }}</p>
+							<p class="message_p"><b>{{ message.username }}:</b> {{ message.message }}</p>
 						</div>
 						{% endfor %}
 					</div>
