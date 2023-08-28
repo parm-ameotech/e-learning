@@ -1,0 +1,141 @@
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#chatbox{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: left;
+    background-image:url('../images/bg.jpg');
+    background-size:cover;
+    background-position: center;
+    padding:20px;
+}
+
+#chatlog{
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#userinput{
+    width: 83%;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#sendMessage{
+    padding: 5px 10px;
+}
+
+#chatlog p{
+    text-align: justify;
+}
+
+.image img{
+    width: 20%;
+    max-width: 20%;
+    height: auto;
+}
+
+#startchat{
+    padding: 3px 10px;
+}
+
+.channel-div, .username-div{
+    margin: 10%;
+}
+
+#channelname{
+    width: 100%;
+}
+
+.clear-chat{
+    margin-right: 50px;
+}
+
+.delete-group{
+    margin-left: 50px;
+}
+
+.notification-container {
+    top: 0;
+    left: 0;
+    right: 435px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.notification {
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    width: 30%;
+    max-width: 500px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    margin-top: 20px;
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.notification.show {
+    top: 0;
+    opacity: 1;
+    background-color: #f0fbff;
+}
+
+.notification .message {
+    display: inline-block;
+    font-weight: 500;
+}
+
+.notification .close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ccc;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.new-msg{
+    color: green;
+}
+
+.blur-effect {
+    filter: blur(5px);
+}
+.message {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    clear: both;
+}
+
+.user-message {
+    text-align: right;
+    background-color: #007bff;
+    color: white;
+    float: right;
+    clear: both;
+}
+
+.other-message {
+    text-align: left;
+    background-color: #f0f0f0;
+    color: black;
+    float: left;
+    clear: both;
+}

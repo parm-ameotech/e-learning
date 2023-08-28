@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'E_learning_app',
     'Chat_app',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'E_learning_project.wsgi.application'
+# WSGI_APPLICATION = 'E_learning_project.wsgi.application'
+ASGI_APPLICATION = 'E_learning_project.asgi.application'
 
 
 # Database
@@ -136,3 +138,13 @@ MEDIA_URL = '/media/' # Public URL at the browser
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}

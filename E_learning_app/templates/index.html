@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block dashboardActive %}active{% endblock dashboardActive %}
-{% block content %}
 {% load static %}
+{% block content %}
+
 	<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
 		<header class="page-header row justify-center">
 			<div class="col-md-6 col-lg-8">
@@ -367,7 +368,7 @@
 	</main>
 	</div>
 	</div>
-	<!-- <script>
+	<script>
 		var startCharts = function () {
 			var chart1 = document.getElementById("line-chart").getContext("2d");
 			window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -378,7 +379,7 @@
 			});
 		};
 		window.setTimeout(startCharts(), 1000);
-	</script> -->
+	</script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
 		integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"

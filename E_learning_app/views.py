@@ -13,9 +13,6 @@ def dashboard(request):
 def profile(request):
     return render(request,'profile.html')
 
-def course(request):
-    return render(request,'course.html')
-
 def register(request):
     if request.method == 'POST':
         email = request.POST['email']
