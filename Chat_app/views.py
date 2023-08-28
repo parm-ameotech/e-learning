@@ -40,8 +40,3 @@ def clear_delete(request):
                 GroupName.objects.filter(name=group_name).first().delete()
                 response['status'] = True
     return JsonResponse(response)
-
-# Manage chat from anywhere
-# from channels.layers import get_channel_layer
-# channel_layer = get_channel_layer()
-# same proccess as it is consumers.py
