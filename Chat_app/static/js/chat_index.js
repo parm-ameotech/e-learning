@@ -12,10 +12,10 @@ chatSocket.onmessage = function(e){
             // showNotification(`${userName} - ${userMessage}`);
             // showNotification();
             // $('#chatlog').addClass('blur-effect');
-            appendMessage(`<div class="message other-message"><p><b>${userName}: </b>${userMessage}</p><div>`);
+            appendMessage(`<div class="message other-message"><p class="message_p"><b>${userName}: </b>${userMessage}</p><div>`);
         }
         else{
-            appendMessage(`<div class="message user-message"><p><b>${userName}: </b>${userMessage}</p></div>`);
+            appendMessage(`<div class="message user-message"><p class="message_p"><b>${userName}: </b>${userMessage}</p></div>`);
         }
         $('#sendMessage').attr('disabled', false);
     }
@@ -99,31 +99,3 @@ $(document).on('click', '.delete-group', function(){
     }
     return;
 })
-
-// function hideNotification() {
-//     $('.notify-msg').fadeOut(); // Hide the notification container
-//     $('#chatlog').removeClass('blur-effect'); // Remove the blur effect from the chat log
-// }
-
-// // notification show on msg
-// function showNotification(msg_content) {
-//     $('.message').text(msg_content);
-//     $('.notify-msg').fadeIn(); // Show the notification container
-//     $('#chatlog').addClass('blur-effect'); // Apply the blur effect
-//     setTimeout(function () {
-//         $('.notification').addClass('show');
-//     }, 100);
-//     setTimeout(function () {
-//         $('.notification').removeClass('show');
-//         hideNotification(); // Hide the notification container and remove the blur effect after a certain time
-//     }, 200000);
-// }
-
-// $(document).on('click', '.new-msg', function(){
-//     $(this).hide();
-// })
-
-// Function to hide the notification container and remove the blur effect when the "Read Message" button is clicked
-// $(document).on('click', '.read-message-btn', function () {
-//     hideNotification();
-// });
